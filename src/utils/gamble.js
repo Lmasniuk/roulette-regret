@@ -1,6 +1,3 @@
-const TOTAL_SPINS = 200;
-const NUMBERS_PLAYED = 10;
-
 function getRandomInt(max) {
     return Math.ceil(Math.random() * max);
 }
@@ -37,6 +34,9 @@ function playGames(totalSpins, numbersPlayed, betAmount){
     }
 
     const results = {
+        totalSpins: totalSpins,
+        numbersPlayed: numbersPlayed,
+        betAmount: betAmount,
         wins: wins,
         losses: losses,
         totalEarnings: totalEarnings

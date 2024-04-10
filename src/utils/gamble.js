@@ -26,7 +26,7 @@ function playGames(totalSpins, numbersPlayed, betAmount){
         //if a win occurs, add to total earnings based on numbersPlayed and betAmount
         if(spinVictory){
             wins +=1;
-            totalEarnings += (35 * betAmount)
+            totalEarnings += (36 * betAmount)
         } else{
             losses +=1;
         }

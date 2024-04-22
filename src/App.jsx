@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="betting-strategy" element={<BettingStrategy bettingConfig={bettingConfig} setBettingConfig={setBettingConfig}/>}/>
+        <Route path="strategy" element={<BettingStrategy bettingConfig={bettingConfig} setBettingConfig={setBettingConfig}/>}/>
       </Routes>
     </BrowserRouter>
   )

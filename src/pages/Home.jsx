@@ -1,5 +1,6 @@
 import RouletteWheel from "../components/RouletteWheel/RouletteWheel"
 import GamesOutcome from "../components/GamesOutcome/GamesOutcome";
+import { Link } from "react-router-dom";
 
 import { useState } from 'react'
 
@@ -44,6 +45,7 @@ export default function Home() {
       <RouletteWheel />
       <h1>Roulette Regret</h1>
       <h2>Bet it all on black until your bank account is in the red or you see all green!</h2>
+      <Link to="/strategy"><button>Betting Strategy Configuration</button></Link>
       <form className="game-config-form" onSubmit={doGames}>
         <label htmlFor="totalSpins">Total Spins:</label>
         <input name="totalSpins" type="number" value={totalSpins} onChange={handleTotalSpinsChange} />
@@ -51,7 +53,7 @@ export default function Home() {
         <input name="numbersPlayed" type="number" value={numbersPlayed} onChange={handleNumbersPlayedChange} />
         <label htmlFor="betAmount">Bet Amount:</label>
         <input name="betAmount" type="number" value={betAmount} onChange={handleBetAmountChange} />
-        <button type="submit" >Play Games!</button>
+        <button type="submit" >Simulate Games!</button>
       </form>
 
       {gamesResult.totalEarnings && <GamesOutcome gamesResult={gamesResult} />}

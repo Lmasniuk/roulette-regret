@@ -8,12 +8,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
-  const [bettingConfig, setBettingConfig] = useState([1,2,4])
+  const [bettingConfig, setBettingConfig] = useState([1,2,4,8,16,32])
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home bettingConfig={bettingConfig} />} />
         <Route path="strategy" element={<BettingStrategy bettingConfig={bettingConfig} setBettingConfig={setBettingConfig}/>}/>
       </Routes>
     </BrowserRouter>

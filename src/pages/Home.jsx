@@ -1,5 +1,6 @@
 import RouletteWheel from "../components/RouletteWheel/RouletteWheel"
 import GamesOutcome from "../components/GamesOutcome/GamesOutcome";
+import "./Home.scss"
 import { Link } from "react-router-dom";
 
 import { useState } from 'react'
@@ -7,7 +8,7 @@ import { useState } from 'react'
 import playGames from '../utils/gamble';
 
 
-export default function Home() {
+export default function Home({bettingConfig}) {
 
 
   const [gamesResult, setGamesResult] = useState({})
@@ -28,14 +29,16 @@ export default function Home() {
   }
 
 
-  function doGames(event) {
+  function doGames(event,bettingConfig) {
     event.preventDefault();
-    console.log(event.target.totalSpins.value)
+    // console.log(bettingConfig)
+    // console.log(event.target.totalSpins.value)
 
     const tempGamesResult = playGames(
       event.target.totalSpins.value,
       event.target.numbersPlayed.value,
-      event.target.betAmount.value
+      event.target.betAmount.value,
+      bettingConfig
     );
 
     setGamesResult(tempGamesResult)
@@ -45,8 +48,8 @@ export default function Home() {
       <RouletteWheel />
       <h1>Roulette Regret</h1>
       <h2>Bet it all on black until your bank account is in the red or you see all green!</h2>
-      <Link to="/strategy"><button>Betting Strategy Configuration</button></Link>
-      <form className="game-config-form" onSubmit={doGames}>
+      <Link to="/strategy"><button className="strategy-button">Betting Strategy Configuration</button></Link>
+      <form className="game-config-form" onSubmit={(event)=>doGames(event, bettingConfig)}>
         <label htmlFor="totalSpins">Total Spins:</label>
         <input name="totalSpins" type="number" value={totalSpins} onChange={handleTotalSpinsChange} />
         <label htmlFor="numbersPlayed">Numbers to Play:</label>

@@ -4,7 +4,7 @@ import "./RouletteWheel.scss"
 function RouletteWheel() {
   return (
     <>
-        <img src={rouletteWheel}/>
+        <img className="roulette-wheel" src={rouletteWheel}/>
     </>
   )
 }

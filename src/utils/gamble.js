@@ -11,14 +11,15 @@ function calculateSingleSpinWin(numbersPlayed){
     }
 }
 
-function playGames(totalSpins, numbersPlayed, betAmount){
+function playGames(totalSpins, numbersPlayed, betAmount, bettingConfig){
     let wins =  0;
     let losses = 0;
     let totalEarnings = 0;
+    let betConfigIndex = 0;
 
     for(let i=0; i<totalSpins; i++){
         //place your bet(subtract from totalEarnings)
-        totalEarnings -= (betAmount * numbersPlayed);
+        totalEarnings -= ((betAmount * bettingConfig[betConfigIndex]) * numbersPlayed);
 
         //do the spin
         const spinVictory = calculateSingleSpinWin(numbersPlayed)
@@ -26,9 +27,14 @@ function playGames(totalSpins, numbersPlayed, betAmount){
         //if a win occurs, add to total earnings based on numbersPlayed and betAmount
         if(spinVictory){
             wins +=1;
-            totalEarnings += (36 * betAmount)
+            totalEarnings += (36 * (betAmount * bettingConfig[betConfigIndex]))
+            betConfigIndex = 0;
         } else{
             losses +=1;
+            betConfigIndex+=1
+            if(betConfigIndex >= bettingConfig.length){
+                betConfigIndex = 0;
+            }
         }
         
     }

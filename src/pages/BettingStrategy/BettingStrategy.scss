@@ -1,5 +1,21 @@
+.strategy-info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.strategy-info{
+    width: 50%;
+    text-align: left;
+}
+
 .bet-inputs{
     display: flex;
     flex-direction: column;
     padding:1em;
+}
+
+.delete-icon{
+    padding-left:10px ;
+    width: 20px;
 }

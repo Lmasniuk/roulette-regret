@@ -27,10 +27,7 @@ const EarningsGraph = ({
                 <svg width={width} height={height}>
                     <g ref={gx} transform={`translate(0,${height - marginBottom})`} />
                     <g ref={gy} transform={`translate(${marginLeft},0)`} />
-                    <path fill="none" stroke="currentColor" strokeWidth="1.5" d={line(earningsHistory)} />
-                    <g fill="white" stroke="currentColor" strokeWidth="1.5">
-                        {earningsHistory.map((d, i) => (<circle key={i} cx={x(i)} cy={y(d)} r="2.5" />))}
-                    </g>
+                    <path fill="none" stroke="currentColor" strokeWidth="1" d={line(earningsHistory)} />
                 </svg>
             </div>
             <h3>Number of Spins</h3>

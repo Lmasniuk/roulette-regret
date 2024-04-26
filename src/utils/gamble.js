@@ -11,7 +11,12 @@ function calculateSingleSpinWin(numbersPlayed){
     }
 }
 
+//how should I represent my earnings....
+
+
+
 function playGames(totalSpins, numbersPlayed, betAmount, bettingConfig){
+    const earningsHistory = []
     let wins =  0;
     let losses = 0;
     let totalEarnings = 0;
@@ -36,6 +41,7 @@ function playGames(totalSpins, numbersPlayed, betAmount, bettingConfig){
                 betConfigIndex = 0;
             }
         }
+        earningsHistory.push(totalEarnings)
         
     }
 
@@ -45,7 +51,8 @@ function playGames(totalSpins, numbersPlayed, betAmount, bettingConfig){
         betAmount: betAmount,
         wins: wins,
         losses: losses,
-        totalEarnings: totalEarnings
+        totalEarnings: totalEarnings,
+        earningsHistory: earningsHistory
     }
 
     return results

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState } from 'react'
 
 import playGames from '../utils/gamble';
+import EarningsGraph from "../components/EarningsGraph/EarningsGraph";
 
 
 export default function Home({bettingConfig}) {
@@ -15,6 +16,7 @@ export default function Home({bettingConfig}) {
   const [totalSpins, setTotalSpins] = useState(200);
   const [numbersPlayed, setnumbersPlayed] = useState(10);
   const [betAmount, setBetAmount] = useState(1);
+  const [earningsHistory, setEarningsHistory] = useState([])
 
   const handleTotalSpinsChange = (event) => {
     setTotalSpins(event.target.value)
@@ -41,7 +43,10 @@ export default function Home({bettingConfig}) {
       bettingConfig
     );
 
+    
     setGamesResult(tempGamesResult)
+    setEarningsHistory(tempGamesResult.earningsHistory)
+    console.log(earningsHistory);
   }
   return (
     <>
@@ -60,6 +65,7 @@ export default function Home({bettingConfig}) {
       </form>
 
       {gamesResult.totalEarnings && <GamesOutcome gamesResult={gamesResult} />}
+      {earningsHistory.length > 0 && <EarningsGraph earningsHistory={earningsHistory}/>}
     </>
   )
 }

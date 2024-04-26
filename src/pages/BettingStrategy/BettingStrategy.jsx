@@ -16,7 +16,6 @@ export default function BettingStrategy({ bettingConfig, setBettingConfig }) {
   }
 
   const removeBet = (index) =>{
-    console.log(index)
     if(bettingConfig.length >1){
       const newBettingConfig = [...bettingConfig];
       newBettingConfig.splice(index,1)

@@ -33,8 +33,6 @@ export default function Home({bettingConfig}) {
 
   function doGames(event,bettingConfig) {
     event.preventDefault();
-    // console.log(bettingConfig)
-    // console.log(event.target.totalSpins.value)
 
     const tempGamesResult = playGames(
       event.target.totalSpins.value,
@@ -46,7 +44,6 @@ export default function Home({bettingConfig}) {
     
     setGamesResult(tempGamesResult)
     setEarningsHistory(tempGamesResult.earningsHistory)
-    console.log(earningsHistory);
   }
   return (
     <>

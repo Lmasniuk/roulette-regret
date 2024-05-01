@@ -11,7 +11,7 @@ export default function BettingStrategy({ bettingConfig, setBettingConfig }) {
 
   const addBetMultiplier = () => {
     const lastBet = bettingConfig[bettingConfig.length - 1];
-    const newBettingConfig = [...bettingConfig, lastBet];
+    const newBettingConfig = [...bettingConfig, lastBet*2];
     setBettingConfig(newBettingConfig);
   }
 

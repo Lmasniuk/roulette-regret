@@ -3,14 +3,11 @@ body{
 }
 
 #root {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
 .game-config-form{
-  width: 50%;
+  width: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;

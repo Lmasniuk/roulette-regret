@@ -3,15 +3,15 @@ import "./EarningsGraph.scss"
 import { useEffect, useRef } from "react";
 
 const EarningsGraph = ({
-    earningsHistory,
-    width = 640,
-    height = 400,
-    marginTop = 20,
-    marginRight = 20,
-    marginBottom = 20,
-    marginLeft = 70
-
+    earningsHistory
 }) => {
+
+    const width = window.innerWidth * 0.6;
+    const height = window.innerHeight / 3;
+    const marginTop = 20;
+    const marginRight = 20;
+    const marginBottom = 20;
+    const marginLeft = 70;
 
     const gx = useRef();
     const gy = useRef();
@@ -45,14 +45,14 @@ const EarningsGraph = ({
     return (
         <div className="earnings-graph-container">
             <div className="earnings-graph">
-                <h3>Earnings($)</h3>
+                <h3 class="axis-label">Earnings($)</h3>
                 <svg width={width} height={height}>
                     <g ref={gx} transform={`translate(0,${height - marginBottom})`} />
                     <g ref={gy} transform={`translate(${marginLeft},0)`} />
                     <path fill="none" stroke="currentColor" strokeWidth="1" d={line(earningsHistory)} />
                 </svg>
             </div>
-            <h3>Number of Spins</h3>
+            <h3 class="axis-label">Number of Spins</h3>
         </div>
     )
 }

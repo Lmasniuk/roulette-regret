@@ -4,6 +4,9 @@
     border-radius: 1.5em;
     border: 2px solid gold;
     margin-top: 2em;
+    margin-left: 5%;
+    margin-right:5%;
+    margin-bottom: 2rem;
     padding: 1.5rem;
     background-color: #9adeb7;
     color: black;
@@ -12,6 +15,10 @@
 .earnings-graph{
     display:flex;
     align-items: center
+}
+
+.axis-label{
+    font-size: 0.75rem;
 }
 
 

@@ -48,8 +48,8 @@ export default function Home({bettingConfig}) {
   return (
     <>
       <RouletteWheel />
-      <h1>Roulette Regret</h1>
-      <h2>Bet it all on black until your bank account is in the red or you see all green!</h2>
+      <h1 className="title">Roulette Regret</h1>
+      <h2 className="slogan">Bet it all on black until your bank account is in the red or you see all green!</h2>
       <Link to="/strategy"><button className="strategy-button">Betting Strategy Configuration</button></Link>
       <form className="game-config-form" onSubmit={(event)=>doGames(event, bettingConfig)}>
         <label htmlFor="totalSpins">Total Spins:</label>

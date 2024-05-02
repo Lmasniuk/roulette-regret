@@ -15,11 +15,33 @@ const EarningsGraph = ({
 
     const gx = useRef();
     const gy = useRef();
-    const x = d3.scaleLinear([0, earningsHistory.length - 1], [marginLeft, width - marginRight]);
-    const y = d3.scaleLinear(d3.extent(earningsHistory), [height - marginBottom, marginTop]);
-    const line = d3.line((d, i) => x(i), y);
-    useEffect(() => void d3.select(gx.current).call(d3.axisBottom(x)), [gx, x]);
-    useEffect(() => void d3.select(gy.current).call(d3.axisLeft(y)), [gy, y]);
+    const x = d3.scaleLinear(
+        [0, earningsHistory.length - 1], 
+        [marginLeft, width - marginRight]
+    );
+    const y = d3.scaleLinear(
+        d3.extent(earningsHistory), 
+        [height - marginBottom, marginTop]
+    );
+    const line = d3.line(
+        (d, i) => x(i),
+        y
+    );
+    useEffect(() => {
+        void d3.select(gx.current).call(
+            d3.axisBottom(x)
+        )
+    }
+        , 
+        [gx, x]
+    );
+    useEffect(() => {
+        void d3.select(gy.current).call(
+            d3.axisLeft(y)
+        )
+    },
+        [gy, y]
+    );
     return (
         <div className="earnings-graph-container">
             <div className="earnings-graph">

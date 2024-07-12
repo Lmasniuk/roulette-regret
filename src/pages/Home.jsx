@@ -1,9 +1,7 @@
 import "./Home.scss";
 
-import RouletteWheel from "../components/RouletteWheel/RouletteWheel";
+import Header from "../components/Header/Header";
 import GamesOutcome from "../components/GamesOutcome/GamesOutcome";
-
-import { Link } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -43,19 +41,8 @@ export default function Home({ bettingConfig }) {
         setEarningsHistory(tempGamesResult.earningsHistory);
     }
     return (
-        <>
-            <RouletteWheel />
-            <h1 className="title">Roulette Regret</h1>
-            <h2 className="slogan">
-                Bet it all on black until your bank account is in the red or you
-                see all green!
-            </h2>
-            <Link to="/strategy">
-                <button className="strategy-button">
-                    Betting Strategy Configuration
-                </button>
-            </Link>
-
+        <div className="container">
+            <Header />
             <SettingsCard
                 doGames={doGames}
                 totalSpins={totalSpins}
@@ -67,12 +54,19 @@ export default function Home({ bettingConfig }) {
                 bettingConfig={bettingConfig}
             />
 
-            {gamesResult.totalEarnings && (
+            <GamesOutcome
+                gamesResult={gamesResult}
+                earningsHistory={earningsHistory}
+            />
+
+            {/* {gamesResult.totalEarnings ? (
                 <GamesOutcome
                     gamesResult={gamesResult}
                     earningsHistory={earningsHistory}
                 />
-            )}
-        </>
+            ) : (
+                <div>ds</div>
+            )} */}
+        </div>
     );
 }

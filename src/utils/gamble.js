@@ -11,8 +11,6 @@ function calculateSingleSpinWin(numbersPlayed) {
     }
 }
 
-const yo = "hello";
-
 function playGames(totalSpins, numbersPlayed, betAmount, bettingConfig) {
     const earningsHistory = [];
     let wins = 0;

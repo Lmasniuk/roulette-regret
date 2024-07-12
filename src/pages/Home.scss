@@ -1,11 +1,14 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    min-width: 100%;
+}
+
 .strategy-button {
     margin: 1em;
 }
 
 .title {
     font-size: 3rem;
-}
-
-.slogan {
-    font-size: 1rem;
 }

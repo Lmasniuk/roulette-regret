@@ -55,34 +55,17 @@ export default function Home({ bettingConfig }) {
                     Betting Strategy Configuration
                 </button>
             </Link>
-            <form
-                className="game-config-form"
-                onSubmit={(event) => doGames(event, bettingConfig)}
-            >
-                <label htmlFor="totalSpins">Total Spins:</label>
-                <input
-                    name="totalSpins"
-                    type="number"
-                    value={totalSpins}
-                    onChange={handleTotalSpinsChange}
-                />
-                <label htmlFor="numbersPlayed">Numbers to Play:</label>
-                <input
-                    name="numbersPlayed"
-                    type="number"
-                    value={numbersPlayed}
-                    onChange={handleNumbersPlayedChange}
-                />
-                <label htmlFor="betAmount">Bet Amount:</label>
-                <input
-                    name="betAmount"
-                    type="number"
-                    value={betAmount}
-                    onChange={handleBetAmountChange}
-                />
-                <button type="submit">Simulate Games!</button>
-            </form>
-            <SettingsCard />
+
+            <SettingsCard
+                doGames={doGames}
+                totalSpins={totalSpins}
+                handleTotalSpinsChange={handleTotalSpinsChange}
+                numbersPlayed={numbersPlayed}
+                handleNumbersPlayedChange={handleNumbersPlayedChange}
+                betAmount={betAmount}
+                handleBetAmountChange={handleBetAmountChange}
+                bettingConfig={bettingConfig}
+            />
 
             {gamesResult.totalEarnings && (
                 <GamesOutcome

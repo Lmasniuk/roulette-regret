@@ -8,6 +8,7 @@ export default function SettingsCard({
     handleNumbersPlayedChange,
     betAmount,
     handleBetAmountChange,
+    bettingConfig,
 }) {
     return (
         <form

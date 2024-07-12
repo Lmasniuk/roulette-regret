@@ -1,12 +1,12 @@
-
-.earnings-graph{
-    display:flex;
+.earnings-graph {
+    display: flex;
     align-items: center;
-    width: 90%;
+    width: 100%;
 }
 
-.axis-label{
-    font-size: 0.75rem;
+.axis-label {
+    font-size: 0.5rem;
+    @media (min-width: 640px) {
+        font-size: 0.75rem;
+    }
 }
-
-

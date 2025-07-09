@@ -36,13 +36,13 @@ export default function SettingsCard({
                 value={betAmount}
                 onChange={handleBetAmountChange}
             />
-            <label htmlFor="bettingStrategy">Betting Strategy</label>
+            <label htmlFor="bettingStrategy">Select Betting Strategy</label>
             <select name="bettingStrategy">
                 <option>Martingale</option>
                 <option>D’Alembert</option>
                 <option>Fibonacci</option>
             </select>
-            <button type="submit">Simulate Games!</button>
+            <button className="simulate-games" type="submit">Simulate Games!</button>
         </form>
     );
 }

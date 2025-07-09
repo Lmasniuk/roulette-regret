@@ -58,15 +58,6 @@ export default function Home({ bettingConfig }) {
                 gamesResult={gamesResult}
                 earningsHistory={earningsHistory}
             />
-
-            {/* {gamesResult.totalEarnings ? (
-                <GamesOutcome
-                    gamesResult={gamesResult}
-                    earningsHistory={earningsHistory}
-                />
-            ) : (
-                <div>ds</div>
-            )} */}
         </div>
     );
 }
